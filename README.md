@@ -156,15 +156,6 @@ Add screenshots inside `assets/screenshots/` and reference them:
 
 ---
 
-## License
-
-This project is shared for educational purposes.
-You may use and modify it freely. If you plan to publish or deploy it, make sure to follow security best practices.
-
----
-
 ## Contact
 
 * LinkedIn: [https://linkedin.com/in/ghayda-n-jaafreh](https://linkedin.com/in/ghayda-n-jaafreh)
-
-```
