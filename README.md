@@ -1,28 +1,170 @@
 # Blood Donation System (PHP + MySQL)
 
+A lightweight web application for managing **blood donors** and **blood requests**.  
+Built with **PHP (MySQLi prepared statements)** and a clean, simple UI — suitable for learning, university projects, or small demos.
+
+---
+
 ## Features
-- Donor registration (public) + JavaScript validation
-- Find compatible donors by recipient blood type (+ optional city)
-- Create blood requests (public) + list/filter requests
-- Admin login/register (hashed passwords) + sessions + logout
-- Admin panel to manage donors and requests
-- Prepared statements (SQL injection protection) + CSRF token on POST
 
-## Setup (XAMPP / WAMP)
-1) Copy the folder to your web root:
-   - XAMPP: C:\xampp\htdocs\blood_donation_project
-2) Create DB & tables:
-   - Open phpMyAdmin -> Import -> `database/schema.sql`
-3) Update DB credentials:
-   - `config/config.php`
-4) Open:
-   - http://localhost/blood_donation_project/index.php
+### Donors Management
+- Add donors (name, phone, city, blood type, availability).
+- Optional info: age, last donation date.
+- Filter/search by **blood type** and **city**.
+- Availability flag to quickly show active donors.
 
-## Admin Account
-- Create your first admin account by opening: `/register.php`
-- Then login via: `/login.php`
+### Blood Requests Management
+- Create requests (requester info, needed blood type, units, date, notes).
+- Manage & view requests list.
+- Indexed fields for faster filtering by blood type and city.
 
-> Tip: If you deploy this publicly, consider disabling `register.php` after creating your admin account.
+### Admin Access
+- Admin registration & login.
+- Passwords stored securely using **hashing** (no plaintext passwords).
 
-## Notes
-- Blood compatibility is implemented in `includes/functions.php`.
+---
+
+## Tech Stack
+- **Backend:** PHP
+- **Database:** MySQL
+- **DB Access:** MySQLi + Prepared Statements
+- **Frontend:** HTML / CSS
+- **Local Server:** XAMPP / WAMP / MAMP (recommended)
+
+---
+
+## Project Structure
+
+```bash
+.
+├── admin/                 # Admin pages & actions
+├── assets/                # CSS + images
+├── config/                # DB configuration & connection
+├── database/              # SQL schema (tables only)
+├── includes/              # Shared components (header/footer/functions)
+├── donor_add.php
+├── index.php
+├── login.php
+├── logout.php
+├── match.php
+├── register.php
+├── request_add.php
+├── requests_list.php
+├── README.md
+└── SECURITY_NOTES.md
+````
+
+---
+
+## Getting Started (Local Setup)
+
+### 1) Requirements
+
+* PHP 7.4+ (recommended)
+* MySQL 5.7+ / MariaDB
+* XAMPP / WAMP / MAMP
+
+### 2) Create Database
+
+1. Open **phpMyAdmin**
+2. Create a new database (recommended name):
+   `blood_donation`
+
+### 3) Import Schema
+
+Import:
+
+* `database/schema.sql`
+
+> This schema contains **tables only** (no pre-inserted data).
+
+### 4) Configure Database Connection
+
+Open:
+
+* `config/config.php`
+
+Set:
+
+* `DB_HOST`
+* `DB_NAME`
+* `DB_USER`
+* `DB_PASS`
+
+### 5) Run the App
+
+Place the project folder inside your local server directory:
+
+* XAMPP: `htdocs/`
+* WAMP: `www/`
+
+Then open in your browser:
+
+```text
+http://localhost/blood-donation-system/
+```
+
+---
+
+## Admin Usage
+
+### Create Admin Account
+
+* Go to: `/register.php`
+* Create your admin user
+
+### Login
+
+* Go to: `/login.php`
+
+> After creating your admin on a production server, it’s recommended to **disable/remove** `register.php` to prevent unauthorized registrations.
+
+---
+
+## Security Notes
+
+This repository is prepared for public sharing:
+
+* No real database credentials included.
+* No seeded admin user or sensitive data inside SQL.
+* Uses password hashing (no plaintext passwords).
+
+See:
+
+* `SECURITY_NOTES.md`
+
+---
+
+## Screenshots (Optional)
+
+Add screenshots inside `assets/screenshots/` and reference them:
+
+```md
+![Home](assets/screenshots/home.png)
+![Admin](assets/screenshots/admin.png)
+```
+
+---
+
+## Future Improvements (Ideas)
+
+* Role-based access (Admin / Staff)
+* Export donors list (CSV / Excel)
+* Enhanced search & filtering UI
+* Email/SMS notifications
+* Docker support
+
+---
+
+## License
+
+This project is shared for educational purposes.
+You may use and modify it freely. If you plan to publish or deploy it, make sure to follow security best practices.
+
+---
+
+## Contact
+
+* LinkedIn: [https://linkedin.com/in/ghayda-n-jaafreh](https://linkedin.com/in/ghayda-n-jaafreh)
+
+```
