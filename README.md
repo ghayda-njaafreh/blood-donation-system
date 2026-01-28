@@ -135,14 +135,14 @@ See:
 
 ---
 
-## Screenshots (Optional)
+## Screenshots 
 
-Add screenshots inside `assets/screenshots/` and reference them:
-
-```md
 ![Home](assets/screenshots/home.png)
-![Admin](assets/screenshots/admin.png)
-```
+![Donor Form](assets/screenshots/donor-form.png)
+![Find Donors](assets/screenshots/find-donors.png)
+![Create Request](assets/screenshots/create-request.png)
+![Requests List](assets/screenshots/requests-list.png)
+![Admin](assets/screenshots/admin-donors.png)
 
 ---
 
